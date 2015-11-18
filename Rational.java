@@ -1,5 +1,5 @@
 /*
-EEA - Elias Milborn, Lorenz Vargas
+EEA - Elias "RzrWire" Milborn, Lorenz "Big L" Vargas
 APCS1 pd10
 HW32 -- Irrationality stops here
 2015-11-18
@@ -32,11 +32,15 @@ public class Rational{
   public String toString(){
     //returns a string representation of the rational number (formatting of your choice)
     //example for us "3/2" -EM
+      String ret = numerator + "/" + denominator;
+      return ret;
   }
   
   public double floatValue(){
     //Returns a floating point value of the number
     //Uses the most precise floating point primitive (which is double btw i think-EM)
+      double ret = numerator/denominator;
+      return ret;
   }
   
   public void multiply(Rational multiplier){
