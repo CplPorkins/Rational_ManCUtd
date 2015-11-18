@@ -70,6 +70,33 @@ public class Rational{
     Rational inverse = new Rational(divisor.getDenominator(), divisor.getNumerator());
     multiply(inverse); //multiplies by the inverse of the divisor
   }
+
+    //returns gcd, needs int a to be greater than int b!!!
+    public static int gcd(int a, int b) {
+
+	//determine the larger number and the smaller number
+	int larger = Math.max(a, b);
+	int smaller = Math.min(a, b);
+	
+	//for the case that the larger number is divisible by the smaller number
+	if ( larger % smaller == 0 ) {
+	    return smaller;
+	}
+	
+	else {
+
+	    //stops the recursion via base case
+	    if ( smaller == 0 ) {
+		return larger;
+	    }
+
+	    else {
+		//recursive call, c and smaller are the new parameters
+		int c = larger - smaller;
+		return gcdER(c, smaller);
+	    }
+	}
+    }// end of gcd() method
   
   /*=====Example=of=Multiply=====
   Rational r = new Rational(2,3); //Stores the rational number 2/3
