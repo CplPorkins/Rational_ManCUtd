@@ -11,14 +11,22 @@ public class Rational{
   private int denominator;
 
   /*=====Constructors=====*/
-  public Rational(){
+  public Rational() {
     //Creates a new Rational with the value of 0/1
-  }
+	this(0,1);
+    }//end basic constructor
 
-  public Rational(int newNumer, int newDenom){
+    public Rational(double num, double denom) {
     //takes 2 parameters, one for the numerator, one for the denominator
     //if an invalid denominator is attempted, should print a message and set the number to 0/1
-  }
+	denominator = denom;
+	numerator = num;
+	if (denom == 0) {
+	    System.out.println("Error. Invalid denominator. Setting numerator to 0 and denominator to 1.");
+	    numerator = 0;
+	    denominator = 1;
+	}
+    }//end constructor
   
   /*=====Methods=====*/
   public String toString(){
