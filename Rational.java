@@ -77,7 +77,7 @@ public class Rational{
 	numerator = (numerator * x.denominator) - (x.numerator * denominator);
 	denominator = (denominator * x.denominator);}
     //returns gcd, needs int a to be greater than int b!!!
-    public static int gcd(int a, int b) {
+    public static int gcdHelper(int a, int b) {
 
 	//determine the larger number and the smaller number
 	int larger = Math.max(a, b);
@@ -98,10 +98,12 @@ public class Rational{
 	    else {
 		//recursive call, c and smaller are the new parameters
 		int c = larger - smaller;
-		return gcd(c, smaller);
+		return gcdHelper(c, smaller);
 	    }
 	}
-    }// end of gcd() method
+    }// end of gcdHelper() method
+    public  int gcd(){
+	return gcdHelper(numerator,denominator);}
   
   /*=====Example=of=Multiply=====
   Rational r = new Rational(2,3); //Stores the rational number 2/3
