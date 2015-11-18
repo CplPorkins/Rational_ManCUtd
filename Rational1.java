@@ -1,0 +1,53 @@
+/*
+EEA - Elias Milborn, Lorenz Vargas
+APCS1 pd10
+HW32 -- Irrationality stops here
+2015-11-18
+*/
+
+public class Rational{
+  /*=====Instance=Variables=====*/
+  private int numerator;
+  private int denominator;
+
+  /*=====Constructors=====*/
+  public Rational(){
+    //Creates a new Rational with the value of 0/1
+  }
+
+  public Rational(int newNumer, int newDenom){
+    //takes 2 parameters, one for the numerator, one for the denominator
+    //if an invalid denominator is attempted, should print a message and set the number to 0/1
+  }
+  
+  /*=====Methods=====*/
+  public String toString(){
+    //returns a string representation of the rational number (formatting of your choice)
+    //example for us "3/2" -EM
+  }
+  
+  public double floatValue(){
+    //Returns a floating point value of the number
+    //Uses the most precise floating point primitive (which is double btw i think-EM)
+  }
+  
+  public void multiply(Rational multiplier){
+    //Takes 1 Rational object as a parameter and multiplies it by this Rational object
+    //Does not return any value
+    //Should modify this object and leave the parameter alone (see below for example)
+    //Need not reduce the fraction
+  }
+    
+  public void divide(Rational divisor){
+    //Works the same as multiply, except the operation is division
+  }
+  
+  /*=====Example=of=Multiply=====
+  Rational r = new Rational(2,3); //Stores the rational number 2/3
+  Rational s = new Rational(1,2); //Stores the rational number 1/2
+  r.multiply(s); //Multiplies r by s, changes r to 2/6.  s remains 1/2*/
+  
+  /*=====Main=Method=====*/
+  public void (String[] args){
+  }
+}
