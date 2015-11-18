@@ -65,10 +65,9 @@ public class Rational{
     
   public void divide(Rational divisor){
     //Works the same as multiply, except the operation is division
-      int num = numerator / multiplier.getNumerator(); //do we care about remainders? should these be doubles?
-      int denom = denominator / multiplier.getDenominator();
-      numerator = num;
-      denominator = denom;      
+    Rational inverse = new Rational(divisor.getDenominator(), divisor.getNumerator());
+    multiply(inverse); //multiplies by the inverse of the divisor
+    
   }
   
   /*=====Example=of=Multiply=====
@@ -78,5 +77,29 @@ public class Rational{
   
   /*=====Main=Method=====*/
   public void (String[] args){
+  	Rational test1 =  new Rational();//tests default constructor;
+  	
+  	System.out.println(test1);//tests toString
+  	System.out.println("expected 0/1");
+  	
+  	Rational test2 = new Rational(7, 11);//tests overloaded constructor
+  	
+  	System.out.println(test2);//tests toString
+  	System.out.println("expected 7/11");
+  	
+  	System.out.prinln(test2.floatValue);//tests floatValue
+  	System.out.println("expected 0.6363...")
+  	
+  	Rational test3 = new Rational (13/14);//used for multiply and divide
+  	
+  	test.multiply(test3);//tests multiply
+  	System.out.println(test2);
+  	System.out.println("expected 91/154")
+  	
+  	test2.divide(test3);//tests divide
+  	System.out.println(test);
+  	Sytem.out.println("expected 1274/2002");
+  	
+  	
   }
 }
