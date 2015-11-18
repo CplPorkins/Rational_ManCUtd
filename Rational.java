@@ -57,7 +57,10 @@ public class Rational{
     //Does not return any value
     //Should modify this object and leave the parameter alone (see below for example)
     //Need not reduce the fraction
-      
+      int num = numerator * multiplier.getNumerator();
+      int denom = denominator * multiplier.getDenominator();
+      numerator = num;
+      denominator = denom;
   }
     
   public void divide(Rational divisor){
