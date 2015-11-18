@@ -10,6 +10,15 @@ public class Rational{
   private int numerator;
   private int denominator;
 
+  /*=====Accessors=====*/
+    public int getNumerator() {
+	return numerator;
+    }
+
+    public int getDenominator() {
+	return denominator;
+    }
+    
   /*=====Constructors=====*/
   public Rational() {
     //Creates a new Rational with the value of 0/1
@@ -48,6 +57,7 @@ public class Rational{
     //Does not return any value
     //Should modify this object and leave the parameter alone (see below for example)
     //Need not reduce the fraction
+      
   }
     
   public void divide(Rational divisor){
