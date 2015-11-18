@@ -25,7 +25,7 @@ public class Rational{
 	this(0,1);
     }//end basic constructor
 
-    public Rational(double num, double denom) {
+    public Rational(int num, int denom) {
     //takes 2 parameters, one for the numerator, one for the denominator
     //if an invalid denominator is attempted, should print a message and set the number to 0/1
 	denominator = denom;
@@ -48,7 +48,9 @@ public class Rational{
   public double floatValue(){
     //Returns a floating point value of the number
     //Uses the most precise floating point primitive (which is double btw i think-EM)
-      double ret = numerator/denominator;
+    	double numer = numerator;
+    	double denom = denominator;
+      double ret = numer/denom;
       return ret;
   }
   
@@ -67,7 +69,6 @@ public class Rational{
     //Works the same as multiply, except the operation is division
     Rational inverse = new Rational(divisor.getDenominator(), divisor.getNumerator());
     multiply(inverse); //multiplies by the inverse of the divisor
-    
   }
   
   /*=====Example=of=Multiply=====
@@ -76,7 +77,7 @@ public class Rational{
   r.multiply(s); //Multiplies r by s, changes r to 2/6.  s remains 1/2*/
   
   /*=====Main=Method=====*/
-  public static void (String[] args){
+  public static void main (String[] args){
   	Rational test1 =  new Rational();//tests default constructor;
   	
   	System.out.println(test1);//tests toString
@@ -87,18 +88,18 @@ public class Rational{
   	System.out.println(test2);//tests toString
   	System.out.println("expected 7/11");
   	
-  	System.out.prinln(test2.floatValue);//tests floatValue
+  	System.out.println(test2.floatValue());//tests floatValue()
   	System.out.println("expected 0.6363...");
   	
-  	Rational test3 = new Rational (13/14);//used for multiply and divide
+  	Rational test3 = new Rational (13, 14);//used for multiply and divide
   	
-  	test.multiply(test3);//tests multiply
+  	test2.multiply(test3);//tests multiply
   	System.out.println(test2);
   	System.out.println("expected 91/154");
   	
   	test2.divide(test3);//tests divide
-  	System.out.println(test);
-  	Sytem.out.println("expected 1274/2002");
+  	System.out.println(test2);
+  	System.out.println("expected 1274/2002");
   	
   	
   }
