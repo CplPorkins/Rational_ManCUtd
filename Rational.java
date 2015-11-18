@@ -1,5 +1,5 @@
 /*
-EEA - Elias "RzrWire" Milborn, Lorenz "Big L" Vargas
+EEA - Matthew "Triangle" So, Lorenz "Big L" Vargas
 APCS1 pd10
 HW32 -- Irrationality stops here
 2015-11-18
