@@ -76,7 +76,7 @@ public class Rational{
   r.multiply(s); //Multiplies r by s, changes r to 2/6.  s remains 1/2*/
   
   /*=====Main=Method=====*/
-  public void (String[] args){
+  public static void (String[] args){
   	Rational test1 =  new Rational();//tests default constructor;
   	
   	System.out.println(test1);//tests toString
@@ -88,13 +88,13 @@ public class Rational{
   	System.out.println("expected 7/11");
   	
   	System.out.prinln(test2.floatValue);//tests floatValue
-  	System.out.println("expected 0.6363...")
+  	System.out.println("expected 0.6363...");
   	
   	Rational test3 = new Rational (13/14);//used for multiply and divide
   	
   	test.multiply(test3);//tests multiply
   	System.out.println(test2);
-  	System.out.println("expected 91/154")
+  	System.out.println("expected 91/154");
   	
   	test2.divide(test3);//tests divide
   	System.out.println(test);
