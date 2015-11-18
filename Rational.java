@@ -70,7 +70,12 @@ public class Rational{
     Rational inverse = new Rational(divisor.getDenominator(), divisor.getNumerator());
     multiply(inverse); //multiplies by the inverse of the divisor
   }
-
+    public void add(Rational x){
+	numerator = (numerator * x.denominator) + (x.numerator * denominator);
+	denominator = (denominator * x.denominator);}
+    public void subtract(Rational x){
+	numerator = (numerator * x.denominator) - (x.numerator * denominator);
+	denominator = (denominator * x.denominator);}
     //returns gcd, needs int a to be greater than int b!!!
     public static int gcd(int a, int b) {
 
@@ -93,7 +98,7 @@ public class Rational{
 	    else {
 		//recursive call, c and smaller are the new parameters
 		int c = larger - smaller;
-		return gcdER(c, smaller);
+		return gcd(c, smaller);
 	    }
 	}
     }// end of gcd() method
@@ -127,6 +132,7 @@ public class Rational{
   	test2.divide(test3);//tests divide
   	System.out.println(test2);
   	System.out.println("expected 1274/2002");
+	    
   	
   	
   }
