@@ -65,6 +65,10 @@ public class Rational{
     
   public void divide(Rational divisor){
     //Works the same as multiply, except the operation is division
+      int num = numerator / multiplier.getNumerator(); //do we care about remainders? should these be doubles?
+      int denom = denominator / multiplier.getDenominator();
+      numerator = num;
+      denominator = denom;      
   }
   
   /*=====Example=of=Multiply=====
