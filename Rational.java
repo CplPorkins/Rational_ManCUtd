@@ -76,6 +76,7 @@ public class Rational{
     public void subtract(Rational x){
 	numerator = (numerator * x.denominator) - (x.numerator * denominator);
 	denominator = (denominator * x.denominator);}
+    
     //returns gcd, needs int a to be greater than int b!!!
     public static int gcd(int a, int b) {
 
@@ -105,15 +106,17 @@ public class Rational{
 
     //gcd with different signature than above
     //takes no inputs and returns gcd of the current numerator and denominator of the instance of class
-    public  int gcd(){
+    public int gcd(){
 	return gcd(numerator,denominator);}
 
     // reduce
     // Changes this Rational to one in reduced form (should use gcd)
     //Uses gcd to bring the rational number into simplest form
     public void reduce(){
-	denominator = denominator/this.gcd();//just divide both numerator
-	numerator = numerator/this.gcd();}//and denominator by gcd
+	int gcd = gcd();
+	denominator = denominator/gcd;//just divide both numerator
+	numerator = numerator/gcd;
+    }//end denominator by gcd
     
     //Compares the values of two Rational numbers
     //  Takes a Rational as a parameter and compares it to the calling object
@@ -158,8 +161,31 @@ public class Rational{
   	test2.divide(test3);//tests divide
   	System.out.println(test2);
   	System.out.println("expected 1274/2002");
+
+	Rational test4 = new Rational(3,10); // 3/10
+	Rational test5 = new Rational(1,2); // 1/2
+	//testing add and reduce using test4 and test5
+	test4.add(test5); // adds 1/2 to 1/5
+	System.out.println(test4);
+	System.out.println("should be 16/20");
+	test4.reduce();
+	System.out.println(test4);
+	System.out.println("should be 4/5");
 	    
-  	
+  	Rational test6 = new Rational(3,10);
+	Rational test7 = new Rational(1,2);
+	//testing subtract
+	test7.subtract(test6); //subtracts 3/10 from 1/2
+	System.out.println(test7);
+	System.out.println("should be 4/20");
+
+	//testing compareTo
+	Rational test8 = new Rational(1,2);
+	Rational test9 = new Rational(5,10);
+	Rational test10 = new Rational(3,4);
+	System.out.println(test8.compareTo(test9)); //should be 0
+	System.out.println(test10.compareTo(test8)); //should be 1
+	System.out.println(test8.compareTo(test10)); //should be -1
   	
   }
 }
